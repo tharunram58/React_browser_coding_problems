@@ -1,10 +1,13 @@
-import Accordion from "./components";
+import Accordion from "./components/accordion";
+import RandomColor from "./components/random-color";
 
 function App() {
   return (
     <>
       {/* Accordion component */}
-      <Accordion></Accordion>
+      {/*<Accordion></Accordion>*/}
+      {/* random-color component */}
+      <RandomColor />
     </>
   );
 }
