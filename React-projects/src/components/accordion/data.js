@@ -1,27 +1,27 @@
 const data = [
     {
       id  : '1',
-      question: "What are accordion components?",
+      question: "What is React primarily used for?",
       answer:
-        "Accordion components are user interface elements used for organizing and presenting content in a collapsible manner. They typically consist of a header, content, and an expand/collapse action.",
+        "React is a JavaScript library used for building user interfaces, particularly for single-page applications.",
     },
     {
       id  : '2',
-      question: "What are they used for?",
+      question: "Which feature of React allows it to efficiently update the UI?",
       answer:
-        "They are commonly employed in various contexts, including FAQs, product descriptions, navigation menus, settings panels, and data tables, to save screen space and provide a structured and user-friendly interface for presenting information or options.",
+        "The Virtual DOM is a key feature of React that allows efficient updates and rendering of the UI by minimizing real DOM manipulations.",
     },
     {
       id  : '3',
-      question: "Accordion as a musical instrument",
+      question: "JSX stands for...?",
       answer:
-        "The accordion is a musical instrument with a keyboard and bellows. It produces sound by air passing over reeds when the player expands or compresses the bellows, used in various music genres.",
+        "JSX is an abbreviation for JavaScript XML. It allows us to write HTML elements in JavaScript and place them in the DOM without any createElement() and/or appendChild() methods.",
     },
     {
       id  : '4',
-      question: "Can I create an accordion component with a different framework?",
+      question: "What are Props in React?",
       answer:
-        "Yes of course, it is very possible to create an accordion component with another framework.",
+        "Props are arguments passed into React components and are used to pass data from a parent component to a child component.",
     },
   ];
 

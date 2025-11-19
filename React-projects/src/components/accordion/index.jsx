@@ -1,57 +1,54 @@
 import { useState } from "react";
 import data from "./data";
-import "./styles.css";
+import './styles.css';
 
-const Accordion = () => {
-  const [singleSelected, setSingleSelected] = useState(null);
-  const [enableMultiSelection, setEnableMultiSelection] = useState(false);
-  const [multipleSelected, setMultipleSelected] = useState([]);
+export default function Accordion() {
+  const [singleSelect, setSingleSelect] = useState(null);
+  const [enableMultiSelect, setEnableMultiSelect] = useState(false);
+  const [multiple, setMultiple] = useState([]);
 
-  function handleSingleSelected(getCurrentId) {
-    setSingleSelected(getCurrentId === singleSelected ? null : getCurrentId);
+  function handleSingleSelection(currentId) {
+    setSingleSelect(singleSelect === currentId ? null : currentId);
   }
 
-  function handleMultiSelection(getCurrentId) {
-    const copyData = [...multipleSelected];
-    const searchIndex = copyData.indexOf(getCurrentId);
-    if (searchIndex === -1) copyData.push(getCurrentId);
-    else copyData.splice(searchIndex, 1);
-    setMultipleSelected(copyData);
+  function handleMultiSelection(currentId) {
+    setMultiple((prev) => {
+      if (prev.includes(currentId)) {
+        return prev.filter((id) => id !== currentId); //Remove
+      } else {
+        return [...prev, currentId]; //Add
+      }
+    });
   }
 
   return (
     <div className="acc-wrapper">
-      <button onClick={() => setEnableMultiSelection(!enableMultiSelection)}>
+      <button onClick={() => setEnableMultiSelect(!enableMultiSelect)}>
         Enable-Multi-Selection
       </button>
       <div className="accordion">
-        {data && data.length > 0 ? (
-          data.map((item) => (
-            <div className="item">
+        {data && data.length > 0
+          ? data.map((item) => (
               <div
+                key={item.id}
                 onClick={
-                  enableMultiSelection
+                  enableMultiSelect
                     ? () => handleMultiSelection(item.id)
-                    : () => handleSingleSelected(item.id)
+                    : () => handleSingleSelection(item.id)
                 }
-                className="title"
+                className="item"
               >
-                <h3>{item.question}</h3>
-                <span>+</span>
+                <div className="title">
+                  <h3>{item.question}</h3>
+                  <span>+</span>
+                </div>
+                {enableMultiSelect
+                  ? multiple.indexOf(item.id) !== -1 && <div className="acc-content">{item.answer}</div>
+                  : singleSelect === item.id && <div className="acc-content">{item.answer}</div>}
               </div>
-              {enableMultiSelection
-                ? multipleSelected.indexOf(item.id) !== -1 && (
-                    <div className="acc-content">{item.answer}</div>
-                  )
-                : singleSelected === item.id && <div className="acc-content">{item.answer}</div>}
-            </div>
-          ))
-        ) : (
-          <div>No data found!!!</div>
-        )}
+            ))
+          : null}
       </div>
     </div>
   );
-};
-
-export default Accordion;
+}

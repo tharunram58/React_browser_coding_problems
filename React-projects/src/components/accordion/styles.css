@@ -1,28 +1,29 @@
-.acc-wrapper {
+.acc-wrapper{
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;  /* push content to top */
+  align-items: center;          /* center horizontally */
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
+  padding-top: 30px; 
 }
 
-.acc-wrapper button {
-    padding: 10px 20px;
-    background: #614101;
-    color: #fff;
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
+.acc-wrapper button{
+  padding: 10px 20px;
+  background: #40b155;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.accordian {
+.accordion {
   width: 500px;
 }
 
 .item {
-  background: #614101;
+  background: #ea956a;
   margin-bottom: 10px;
   padding: 10px 20px;
 }
