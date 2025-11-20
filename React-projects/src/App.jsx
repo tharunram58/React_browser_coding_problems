@@ -1,9 +1,13 @@
 import Accordion from "./components/accordion";
+import ModalTest from "./components/custom-modal/modal-test";
+import TabTest from "./components/custom-tabs/tab-test";
+import GithubProfileFinder from "./components/github-profile-finder";
 import ImageSlider from "./components/image-slider";
 import LightDarkMode from "./components/light-dark-mode";
 import LoadData from "./components/load-more-data";
 import QrCode from "./components/qr-code-generator";
 import RandomColor from "./components/random-color";
+import ScrollIndicator from "./components/scroll-indicator";
 import StarRating from "./components/star-rating";
 
 function App() {
@@ -26,7 +30,15 @@ function App() {
       {/* QR-CODE component */}
       {/* <QrCode /> */}
       {/* light-dark theme component */}
-      <LightDarkMode></LightDarkMode>
+      {/* <LightDarkMode></LightDarkMode> */}
+      {/* custom scroll component */}
+      {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/> */}
+      {/* custom-tabs component */}
+      {/* <TabTest/> */}
+      {/* custom-modal component */}
+      {/* <ModalTest /> */}
+      {/* github-profile component */}
+      <GithubProfileFinder />
     </>
   );
 }
